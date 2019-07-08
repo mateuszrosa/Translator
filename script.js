@@ -1,8 +1,25 @@
 const form = document.querySelector('form');
 const input = document.querySelector('input');
+let text = '';
+const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
+
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    console.log(input.value);
+    text = input.value;
+    translate();
     input.value = '';
 })
+
+translate = () => {
+    fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=en-pl&[format=plain]`)
+        .then(response => {
+            return response;
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+        })
+}

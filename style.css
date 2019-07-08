@@ -9,7 +9,16 @@ h1 {
     text-align: center;
 }
 
-form {
-    text-align: center;
-    padding-top: 100px;
+div.container {
+    width: 60%;
+    height: 300px;
+    margin: 200px auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.container div {
+    width: 48%;
+    border: 1px solid black;
 }

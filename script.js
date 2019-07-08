@@ -5,6 +5,10 @@ let text = '';
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
 
 
+first.addEventListener('click', e => {
+    e.target.textContent = '';
+})
+
 first.addEventListener('input', e => {
     text = e.target.textContent;
     translate();

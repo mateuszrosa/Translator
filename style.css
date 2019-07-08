@@ -11,14 +11,19 @@ h1 {
 
 div.container {
     width: 60%;
-    height: 300px;
+    height: 100px;
     margin: 200px auto;
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
 div.container div {
     width: 48%;
-    border: 1px solid black;
+    border: 3px solid black;
+    border-radius: 2%;
+}
+
+.first {
+    color: gray;
+    font-size: 18px;
 }

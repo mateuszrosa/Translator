@@ -20,13 +20,19 @@ div.container {
 div.container div {
     width: 48%;
     border: 3px solid black;
-    border-radius: 2%;
+    /* border-radius: 8px; */
 }
 
 .first {
-    font-size: 18px;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
+    border-radius: 8px;
+}
+
+.second {
+    padding: 3px 3px;
+    border-radius: 8px;
 }
 
 
@@ -38,6 +44,7 @@ div.first .choose {
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+    padding: 3px 3px;
 }
 
 div.first .input {
@@ -46,8 +53,14 @@ div.first .input {
     border: none;
     font-size: 18px;
     resize: none;
+    padding: 3px 3px;
 }
 
 .choose span {
     font-weight: normal;
+}
+
+.choose span:hover {
+    background-color: #000;
+    color: #fff;
 }

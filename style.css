@@ -24,7 +24,6 @@ div.container div {
 }
 
 .first {
-    color: gray;
     font-size: 18px;
     display: flex;
     flex-direction: column;
@@ -45,6 +44,10 @@ div.first .input {
     width: 100%;
     flex-grow: 1;
     border: none;
+}
+
+div.first span {
+    color: gray;
 }
 
 .choose span {

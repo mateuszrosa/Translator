@@ -10,7 +10,8 @@ input.addEventListener('click', e => {
 })
 
 input.addEventListener('input', e => {
-    console.log('change');
+    text = e.target.textContent;
+    translate();
 })
 
 translate = () => {

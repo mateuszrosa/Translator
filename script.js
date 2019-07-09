@@ -9,6 +9,9 @@ input.addEventListener('click', e => {
     input.querySelector('span').textContent = '';
 })
 
+input.addEventListener('input', e => {
+    console.log('change');
+})
 
 translate = () => {
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=en-pl&[format=plain]`)

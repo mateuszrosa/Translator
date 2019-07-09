@@ -11,8 +11,9 @@ input.addEventListener('input', e => {
 });
 
 spans.forEach(span => {
-    span.addEventListener('click', () => {
-        console.log('span');
+    span.addEventListener('click', e => {
+        spans.forEach(span => span.classList.remove('active'));
+        e.target.classList.toggle('active');
     })
 })
 

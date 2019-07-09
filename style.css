@@ -60,7 +60,7 @@ div.first .input {
     font-weight: normal;
 }
 
-.choose span:hover {
+.active {
     background-color: #000;
     color: #fff;
 }

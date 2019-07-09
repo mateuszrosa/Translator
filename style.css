@@ -44,10 +44,8 @@ div.first .input {
     width: 100%;
     flex-grow: 1;
     border: none;
-}
-
-div.input span {
-    color: gray;
+    font-size: 18px;
+    resize: none;
 }
 
 .choose span {

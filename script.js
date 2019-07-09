@@ -9,6 +9,7 @@ first.addEventListener('click', e => {
     e.target.textContent = '';
 })
 
+
 first.addEventListener('input', e => {
     text = e.target.textContent;
     translate();

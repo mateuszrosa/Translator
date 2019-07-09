@@ -26,9 +26,12 @@ div.container div {
 .first {
     color: gray;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
-div.container .choose {
+
+div.first .choose {
     width: 100%;
     border: none;
     border-bottom: 3px solid #000;
@@ -36,6 +39,12 @@ div.container .choose {
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+}
+
+div.first .input {
+    width: 100%;
+    flex-grow: 1;
+    border: none;
 }
 
 .choose span {

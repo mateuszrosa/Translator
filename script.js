@@ -1,6 +1,7 @@
 const translator = document.querySelector('.second .translator');
 const input = document.querySelector('.input');
-const spans = document.querySelectorAll('.choose span');
+const spansFrom = document.querySelectorAll('.first .choose span');
+const spansTo = document.querySelectorAll('.second .choose span');
 const btn = document.querySelector('button');
 let translation = '';
 let fromLang = 'en';
@@ -18,9 +19,9 @@ btn.addEventListener('click', () => {
     }
 })
 
-spans.forEach(span => {
+spansFrom.forEach(span => {
     span.addEventListener('click', e => {
-        spans.forEach(span => span.classList.remove('active'));
+        spansFrom.forEach(span => span.classList.remove('active'));
         e.target.classList.toggle('active');
         fromLang = e.target.dataset.lang;
     })

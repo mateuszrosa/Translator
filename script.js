@@ -13,7 +13,9 @@ input.addEventListener('click', () => {
 })
 
 btn.addEventListener('click', () => {
-    translate(input.value);
+    if (input.value.length !== 0) {
+        translate(input.value);
+    }
 })
 
 spans.forEach(span => {

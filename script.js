@@ -9,6 +9,7 @@ const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ec
 
 input.addEventListener('click', () => {
     input.value = '';
+    translator.textContent = "";
 })
 
 btn.addEventListener('click', () => {

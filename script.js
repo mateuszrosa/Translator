@@ -27,6 +27,14 @@ spansFrom.forEach(span => {
     })
 })
 
+spansTo.forEach(span => {
+    span.addEventListener('click', e => {
+        spansTo.forEach(span => span.classList.remove('active'));
+        e.target.classList.toggle('active');
+        toLang = e.target.dataset.lang;
+    })
+})
+
 const translate = (text) => {
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromLang}-${toLang}&[format=plain]`)
         .then(response => {

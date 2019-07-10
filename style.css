@@ -12,7 +12,7 @@ h1 {
 div.container {
     width: 80%;
     height: 150px;
-    margin: 200px auto;
+    margin: 200px auto 0 auto;
     display: flex;
     justify-content: space-between;
 }
@@ -20,7 +20,6 @@ div.container {
 div.container div {
     width: 48%;
     border: 3px solid black;
-    /* border-radius: 8px; */
 }
 
 .first {
@@ -33,10 +32,12 @@ div.container div {
 .second {
     padding: 3px 3px;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 
-div.first .choose {
+div.container .choose {
     width: 100%;
     border: none;
     border-bottom: 3px solid #000;
@@ -47,7 +48,18 @@ div.first .choose {
     padding: 3px 3px;
 }
 
+
 div.first .input {
+    /* width: 100%; */
+    /* flex-grow: 1; */
+    border: none;
+    font-size: 18px;
+    resize: none;
+    /* padding: 3px 3px; */
+}
+
+
+div.container .translator {
     width: 100%;
     flex-grow: 1;
     border: none;
@@ -63,4 +75,12 @@ div.first .input {
 .active {
     background-color: #000;
     color: #fff;
+}
+
+button {
+    margin: 3px auto;
+    display: block;
+    padding: 5px 10px;
+    font-size: 25px;
+    border-radius: 5px;
 }

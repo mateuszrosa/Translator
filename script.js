@@ -1,5 +1,5 @@
 const first = document.querySelector('.first');
-const second = document.querySelector('.second');
+const translator = document.querySelector('.second .translator');
 const input = document.querySelector('.input');
 const spans = document.querySelectorAll('.choose span');
 let text = '';
@@ -20,16 +20,16 @@ spans.forEach(span => {
     })
 })
 
-translate = () => {
+const translate = () => {
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromLang}-${toLang}&[format=plain]`)
         .then(response => {
-            return response;
+            if (response.ok) return response;
+            else return;
         })
         .then(response => {
             return response.json();
         })
         .then(data => {
-            console.log(data);
-            second.textContent = data.text[0]
+            translator.textContent = data.text[0]
         })
 }

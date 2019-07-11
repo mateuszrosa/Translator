@@ -48,3 +48,16 @@ const translate = (text) => {
             translator.textContent = data.text[0];
         })
 }
+
+const detect = (text) => {
+    fetch(`https://translate.yandex.net/api/v1.5/tr.json/detect?key=${key}&text=${text}&[hint=en,de,pl,ru]`)
+        .then(response => {
+            if (response.ok) return response
+        })
+        .then(response => {
+            response.json();
+        })
+        .then(data => {
+            console.log(data);
+        })
+}

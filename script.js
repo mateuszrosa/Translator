@@ -1,8 +1,8 @@
 const translator = document.querySelector('.second .translator');
 const input = document.querySelector('.input');
-const spansFrom = document.querySelectorAll('.chooseLang');
-const spansTo = document.querySelectorAll('.second .choose span');
-const detectSpan = document.querySelector('span.detect');
+const spansFrom = document.querySelectorAll('.first .choose li');
+const spansTo = document.querySelectorAll('.second .choose li');
+const detectSpan = document.querySelector('li.detect');
 const btn = document.querySelector('button');
 let translation = '';
 let fromLang = 'pl';
@@ -12,10 +12,6 @@ const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ec
 input.addEventListener('click', () => {
     input.value = '';
     translator.textContent = "";
-})
-
-detectSpan.addEventListener('click', () => {
-    console.log('click');
 })
 
 btn.addEventListener('click', () => {
@@ -33,11 +29,14 @@ spansFrom.forEach(span => {
         spansFrom.forEach(span => span.classList.remove('active'));
         e.target.classList.toggle('active');
         if (e.target.dataset.lang === "detect") {
-            fromLang = 'detect';
+            input.addEventListener('input', e => {
+                if (input.value.length > 2) {
+                    detect(input.value);
+                }
+            })
         } else {
             fromLang = e.target.dataset.lang;
         }
-        console.log(fromLang);
     })
 })
 

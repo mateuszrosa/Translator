@@ -46,6 +46,7 @@ div.container .choose {
     display: flex;
     justify-content: space-between;
     padding: 3px 3px;
+    list-style: none;
 }
 
 
@@ -65,7 +66,7 @@ div.container .translator {
     padding: 3px 3px;
 }
 
-.choose span {
+.choose li {
     font-weight: normal;
 }
 

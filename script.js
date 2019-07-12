@@ -69,6 +69,6 @@ const detect = (text) => {
             return response.json();
         })
         .then(data => {
-            console.log(data.lang);
+            fromLang = data.lang;
         })
 }

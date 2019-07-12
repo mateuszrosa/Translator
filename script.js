@@ -1,7 +1,8 @@
 const translator = document.querySelector('.second .translator');
 const input = document.querySelector('.input');
-const spansFrom = document.querySelectorAll('.first .choose span');
+const spansFrom = document.querySelectorAll('.chooseLang');
 const spansTo = document.querySelectorAll('.second .choose span');
+const detectSpan = document.querySelector('span.detect');
 const btn = document.querySelector('button');
 let translation = '';
 let fromLang = 'pl';
@@ -11,6 +12,10 @@ const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ec
 input.addEventListener('click', () => {
     input.value = '';
     translator.textContent = "";
+})
+
+detectSpan.addEventListener('click', () => {
+    console.log('click');
 })
 
 btn.addEventListener('click', () => {
@@ -45,7 +50,6 @@ spansTo.forEach(span => {
 })
 
 const translate = (text) => {
-    console.log(object);
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromLang}-${toLang}&[format=plain]`)
         .then(response => {
             if (response.ok) return response;
@@ -69,6 +73,6 @@ const detect = (text) => {
             return response.json();
         })
         .then(data => {
-            fromLang = data.lang;
+            detectSpan.textContent = `Detect: ${data.lang}`
         })
 }

@@ -27,6 +27,9 @@ lisFrom.forEach(li => {
     li.addEventListener('click', e => {
         lisFrom.forEach(span => span.classList.remove('active'));
         e.target.classList.toggle('active');
+        if (e.target.classList.contains('more')) {
+            e.target.querySelector('.langs').style.display = "block";
+        }
         fromLang = e.target.dataset.lang;
     })
 })

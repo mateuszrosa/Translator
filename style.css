@@ -70,6 +70,15 @@ div.container .translator {
     font-weight: normal;
 }
 
+.langs {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    position: absolute;
+    background-color: #fff;
+    display: none;
+}
+
 .active {
     background-color: #000;
     color: #fff;

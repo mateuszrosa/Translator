@@ -3,6 +3,7 @@ const input = document.querySelector('.input');
 const lisFrom = document.querySelectorAll('.first .choose li');
 const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('button');
+const langs = document.querySelector('.langs');
 let translation = '';
 let fromLang = 'pl';
 let toLang = 'en';
@@ -28,9 +29,11 @@ lisFrom.forEach(li => {
         lisFrom.forEach(span => span.classList.remove('active'));
         e.target.classList.toggle('active');
         if (e.target.classList.contains('more')) {
-            e.target.querySelector('.langs').style.display = "block";
+            langs.classList.toggle("activeLangs")
+        } else {
+            langs.classList.remove("activeLangs")
+            fromLang = e.target.dataset.lang;
         }
-        fromLang = e.target.dataset.lang;
     })
 })
 

@@ -86,6 +86,10 @@ div.container .translator {
     list-style: none;
 }
 
+.activeLangs {
+    display: block;
+}
+
 .active {
     background-color: #000;
     color: #fff;

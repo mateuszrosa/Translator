@@ -72,12 +72,18 @@ div.container .translator {
 
 .langs {
     width: 300px;
-    height: 200px;
     border: 1px solid black;
     position: absolute;
     background-color: #fff;
     display: none;
     color: black;
+    padding: 5px 10px;
+}
+
+.langs ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
 }
 
 .active {

@@ -96,9 +96,10 @@ div.container .translator {
 }
 
 button {
-    margin: 0 auto;
-    display: block;
+    width: 150px;
     padding: 5px 10px;
     font-size: 25px;
     border-radius: 5px;
+    margin-left: calc(100% - 150px);
+    margin-top: 70px;
 }

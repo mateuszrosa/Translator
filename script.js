@@ -7,11 +7,30 @@ const langs = document.querySelector('.langs');
 let translation = '';
 let fromLang = 'pl';
 let toLang = 'en';
+let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
 
 input.addEventListener('click', () => {
     input.value = '';
     translator.textContent = "";
+})
+
+lisFrom.forEach(li => {
+    li.addEventListener('click', e => {
+        lisFrom.forEach(span => span.classList.remove('active'));
+        e.target.classList.toggle('active');
+        if (e.target.classList.contains('more')) {
+            langs.classList.toggle("activeLangs")
+            langs.querySelectorAll("ul li").forEach(li => {
+                li.addEventListener('click', e => {
+                    console.log(e.target);
+                })
+            })
+        } else {
+            langs.classList.remove("activeLangs")
+            fromLang = e.target.dataset.lang;
+        }
+    })
 })
 
 btn.addEventListener('click', () => {
@@ -24,17 +43,8 @@ btn.addEventListener('click', () => {
     }
 })
 
-lisFrom.forEach(li => {
-    li.addEventListener('click', e => {
-        lisFrom.forEach(span => span.classList.remove('active'));
-        e.target.classList.toggle('active');
-        if (e.target.classList.contains('more')) {
-            langs.classList.toggle("activeLangs")
-        } else {
-            langs.classList.remove("activeLangs")
-            fromLang = e.target.dataset.lang;
-        }
-    })
+input.addEventListener('input', e => {
+    // console.log(e.target.value);
 })
 
 lisTo.forEach(li => {
@@ -55,7 +65,32 @@ const translate = (text) => {
             return response.json();
         })
         .then(data => {
-            console.log(data);
             translator.textContent = data.text[0];
+        })
+}
+
+const detect = (text) => {
+    fetch(`https://translate.yandex.net/api/v1.5/tr.json/detect?key=${key}&text=${text}`)
+        .then(response => {
+            if (response.ok) return response
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            getLang(data.lang);
+        })
+}
+
+const getLang = (lang) => {
+    fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
+        .then(response => {
+            if (response.ok) return response
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            console.log(data.langs[lang]);
         })
 }

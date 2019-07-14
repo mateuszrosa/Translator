@@ -33,7 +33,9 @@ lisFrom.forEach(li => {
     })
 })
 
-btn.addEventListener('click', () => {
+btn.addEventListener('submit', e => {
+    e.target.preventDefault()
+    console.log('work');
     if (input.value.length !== 0) {
         if (fromLang === "detect") {
             detect(input.value);

@@ -4,6 +4,7 @@ const lisFrom = document.querySelectorAll('.first .choose li');
 const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('.btn');
 const langs = document.querySelector('.langs');
+const moreLangs = document.querySelectorAll('.more .langs ul li');
 let translation = '';
 let fromLang = 'pl';
 let toLang = 'en';
@@ -20,16 +21,18 @@ lisFrom.forEach(li => {
         lisFrom.forEach(span => span.classList.remove('active'));
         e.target.classList.toggle('active');
         if (e.target.classList.contains('more')) {
-            langs.classList.toggle("activeLangs")
-            langs.querySelectorAll("ul li").forEach(li => {
-                li.addEventListener('click', e => {
-                    console.log(e.target);
-                })
-            })
+            e.target.querySelector('.langs').classList.add('activeLangs');
         } else {
+            console.log('remove');
             langs.classList.remove("activeLangs")
             fromLang = e.target.dataset.lang;
         }
+    })
+})
+
+moreLangs.forEach(lang => {
+    lang.addEventListener('click', e => {
+        console.log(e.target);
     })
 })
 

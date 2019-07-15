@@ -2,7 +2,7 @@ const translator = document.querySelector('.second .translator');
 const input = document.querySelector('.input');
 const lisFrom = document.querySelectorAll('.first .choose li');
 const lisTo = document.querySelectorAll('.second .choose li');
-const btn = document.querySelector('button');
+const btn = document.querySelector('.btn');
 const langs = document.querySelector('.langs');
 let translation = '';
 let fromLang = 'pl';
@@ -33,16 +33,17 @@ lisFrom.forEach(li => {
     })
 })
 
-btn.addEventListener('submit', e => {
-    e.target.preventDefault()
-    console.log('work');
-    if (input.value.length !== 0) {
-        if (fromLang === "detect") {
-            detect(input.value);
-        } else {
-            translate(input.value);
-        }
-    }
+btn.addEventListener('click', e => {
+    e.preventDefault()
+    // e.target.preventDefault()
+    // console.log('work');
+    // if (input.value.length !== 0) {
+    //     if (fromLang === "detect") {
+    //         detect(input.value);
+    //     } else {
+    //         translate(input.value);
+    //     }
+    // }
 })
 
 input.addEventListener('input', e => {

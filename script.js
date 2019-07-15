@@ -44,6 +44,19 @@ btn.addEventListener('click', e => {
     }
 })
 
+input.addEventListener('keydown', e => {
+    if (e.keyCode === 13 && !e.shiftKey) {
+        e.preventDefault();
+        if (input.value.length !== 0) {
+            if (fromLang === "detect") {
+                detect(input.value);
+            } else {
+                translate(input.value);
+            }
+        }
+    }
+})
+
 lisTo.forEach(li => {
     li.addEventListener('click', e => {
         lisTo.forEach(li => li.classList.remove('active'));

@@ -44,10 +44,6 @@ btn.addEventListener('click', e => {
     }
 })
 
-input.addEventListener('input', e => {
-    // console.log(e.target.value);
-})
-
 lisTo.forEach(li => {
     li.addEventListener('click', e => {
         lisTo.forEach(li => li.classList.remove('active'));

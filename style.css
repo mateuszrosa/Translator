@@ -40,6 +40,10 @@ div.container .choose {
     height: 40px;
 }
 
+div.first form .input {
+    height: 100px;
+}
+
 div.first .input {
     border: none;
     font-size: 18px;

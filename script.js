@@ -35,15 +35,13 @@ lisFrom.forEach(li => {
 
 btn.addEventListener('click', e => {
     e.preventDefault()
-    // e.target.preventDefault()
-    // console.log('work');
-    // if (input.value.length !== 0) {
-    //     if (fromLang === "detect") {
-    //         detect(input.value);
-    //     } else {
-    //         translate(input.value);
-    //     }
-    // }
+    if (input.value.length !== 0) {
+        if (fromLang === "detect") {
+            detect(input.value);
+        } else {
+            translate(input.value);
+        }
+    }
 })
 
 input.addEventListener('input', e => {

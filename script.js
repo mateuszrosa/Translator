@@ -1,6 +1,6 @@
 const translator = document.querySelector('.second .translator');
 const input = document.querySelector('.input');
-const lisFrom = document.querySelectorAll('.first .choose li');
+const lisFrom = document.querySelectorAll('.first .choose li.firstUl');
 const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('.btn');
 const langs = document.querySelector('.langs');
@@ -24,7 +24,7 @@ lisFrom.forEach(li => {
             e.target.querySelector('.langs').classList.add('activeLangs');
         } else {
             console.log('remove');
-            langs.classList.remove("activeLangs")
+            li.classList.remove("activeLangs")
             fromLang = e.target.dataset.lang;
         }
     })

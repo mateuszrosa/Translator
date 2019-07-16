@@ -17,22 +17,12 @@ input.addEventListener('click', () => {
 })
 
 lisFrom.forEach(li => {
-    li.addEventListener('click', e => {
-        lisFrom.forEach(span => span.classList.remove('active'));
-        e.target.classList.toggle('active');
-        if (e.target.classList.contains('more')) {
-            e.target.querySelector('.langs').classList.add('activeLangs');
-        } else {
-            console.log('remove');
-            li.classList.remove("activeLangs")
-            fromLang = e.target.dataset.lang;
+    li.addEventListener('click', () => {
+        if (li.classList.contains('more')) {
+            li.querySelector('.langs').classList.toggle('activeLangs');
         }
-    })
-})
-
-moreLangs.forEach(lang => {
-    lang.addEventListener('click', e => {
-        console.log(e.target);
+        lisFrom.forEach(li => li.classList.remove('active'));
+        li.classList.add('active');
     })
 })
 

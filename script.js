@@ -18,8 +18,9 @@ input.addEventListener('click', () => {
 
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
+        langs.classList.remove('activeLangs');
         if (li.classList.contains('more')) {
-            li.querySelector('.langs').classList.toggle('activeLangs');
+            langs.classList.toggle('activeLangs');
         }
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');

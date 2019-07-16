@@ -22,6 +22,7 @@ lisFrom.forEach(li => {
         langs.classList.remove('activeLangs');
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
+        fromLang = li.dataset.lang;
         if (li.classList.contains('more')) {
             langs.classList.toggle('activeLangs');
         }

@@ -5,7 +5,6 @@ const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('.btn');
 const langs = document.querySelector('.langs');
 const moreLangs = document.querySelectorAll('.more .langs ul li');
-console.log(moreLangs);
 let translation = '';
 let fromLang = 'pl';
 let toLang = 'en';
@@ -33,6 +32,8 @@ moreLangs.forEach(li => {
     li.addEventListener('click', () => {
         moreLangs.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
+        fromLang = li.dataset.lang;
+        console.log(fromLang);
     })
 })
 
@@ -96,6 +97,7 @@ const detect = (text) => {
 }
 
 const getLang = (lang) => {
+    console.log(lang);
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
         .then(response => {
             if (response.ok) return response

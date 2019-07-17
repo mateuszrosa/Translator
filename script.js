@@ -19,7 +19,7 @@ input.addEventListener('click', () => {
 
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
-        console.log('click');
+        more.addEventListener('click', moreFun);
         langs.classList.remove('activeLangs');
         more.classList.remove('active');
         lisFrom.forEach(li => li.classList.remove('active'));
@@ -43,6 +43,15 @@ moreLangs.forEach(li => {
     li.addEventListener('click', () => {
         moreLangs.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
+        fromLang = li.dataset.lang;
+        langs.classList.remove('activeLangs');
+        lisFrom[1].textContent = li.textContent;
+        lisFrom[1].dataset.lang = li.dataset.lang;
+        lisFrom[1].classList.add('active');
+        more.classList.remove('active');
+        setTimeout(() => {
+            more.addEventListener('click', moreFun);
+        }, 500)
     })
 })
 

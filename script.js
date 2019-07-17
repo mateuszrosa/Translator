@@ -10,6 +10,7 @@ let fromLang = 'pl';
 let toLang = 'en';
 let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
+const lis = document.querySelectorAll('li');
 
 input.addEventListener('click', () => {
     input.value = '';
@@ -18,22 +19,9 @@ input.addEventListener('click', () => {
 
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
-        langs.classList.remove('activeLangs');
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
         fromLang = li.dataset.lang;
-        if (li.classList.contains('more')) {
-            langs.classList.toggle('activeLangs');
-        }
-    })
-});
-
-moreLangs.forEach(li => {
-    li.addEventListener('click', () => {
-        moreLangs.forEach(li => li.classList.remove('active'));
-        li.classList.add('active');
-        fromLang = li.dataset.lang;
-        console.log(fromLang);
     })
 })
 
@@ -44,6 +32,7 @@ btn.addEventListener('click', e => {
             detect(input.value);
         } else {
             translate(input.value);
+            console.log(fromLang);
         }
     }
 })
@@ -70,6 +59,7 @@ lisTo.forEach(li => {
 })
 
 const translate = (text) => {
+    console.log(fromLang);
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromLang}-${toLang}&[format=plain]`)
         .then(response => {
             if (response.ok) return response;
@@ -97,7 +87,6 @@ const detect = (text) => {
 }
 
 const getLang = (lang) => {
-    console.log(lang);
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
         .then(response => {
             if (response.ok) return response

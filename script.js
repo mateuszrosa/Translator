@@ -4,13 +4,13 @@ const lisFrom = document.querySelectorAll('.first .choose li.firstUl');
 const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('.btn');
 const langs = document.querySelector('.langs');
+const more = document.querySelector('.more');
 const moreLangs = document.querySelectorAll('.more .langs ul li');
 let translation = '';
 let fromLang = 'pl';
 let toLang = 'en';
 let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
-const lis = document.querySelectorAll('li');
 
 input.addEventListener('click', () => {
     input.value = '';
@@ -19,10 +19,16 @@ input.addEventListener('click', () => {
 
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
+        more.classList.remove('active');
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
         fromLang = li.dataset.lang;
     })
+});
+
+more.addEventListener('click', (e) => {
+    lisFrom.forEach(li => li.classList.remove('active'));
+    e.target.classList.add('active');
 })
 
 btn.addEventListener('click', e => {

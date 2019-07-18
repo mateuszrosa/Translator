@@ -55,6 +55,12 @@ moreLangs.forEach(li => {
     })
 })
 
+lisTo.forEach(li => {
+    li.addEventListener('click', () => {
+        li.classList.add('active')
+    })
+});
+
 btn.addEventListener('click', e => {
     e.preventDefault()
     if (input.value.length !== 0) {
@@ -79,14 +85,6 @@ input.addEventListener('keydown', e => {
         }
     }
 })
-
-// lisTo.forEach(li => {
-//     li.addEventListener('click', e => {
-//         lisTo.forEach(li => li.classList.remove('active'));
-//         e.target.classList.toggle('active');
-//         toLang = e.target.dataset.lang;
-//     })
-// })
 
 const translate = (text) => {
     console.log(fromLang);

@@ -4,7 +4,7 @@ const lisFrom = document.querySelectorAll('.first .choose li.firstUl');
 const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('.btn');
 const langs = document.querySelector('.langs');
-const more = document.querySelector('.more');
+const more = document.querySelectorAll('.more');
 const moreLangs = document.querySelectorAll('.more .langs ul li');
 let translation = '';
 let fromLang = 'pl';
@@ -19,9 +19,11 @@ input.addEventListener('click', () => {
 
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
-        more.addEventListener('click', moreFun);
+        more.forEach(more => {
+            more.addEventListener('click', moreFun);
+            more.classList.remove('active');
+        })
         langs.classList.remove('activeLangs');
-        more.classList.remove('active');
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
         fromLang = li.dataset.lang;
@@ -33,10 +35,15 @@ const moreFun = (e) => {
     lisFrom.forEach(li => li.classList.remove('active'));
     e.target.classList.add('active');
     langs.classList.add('activeLangs');
-    more.removeEventListener('click', moreFun, false);
+    more.forEach(more => {
+        more.removeEventListener('click', moreFun, false);
+    })
 }
 
-more.addEventListener('click', moreFun);
+more.forEach(more => {
+    more.addEventListener('click', moreFun);
+})
+
 
 
 moreLangs.forEach(li => {
@@ -89,7 +96,6 @@ input.addEventListener('keydown', e => {
 })
 
 const translate = (text) => {
-    console.log(fromLang);
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromLang}-${toLang}&[format=plain]`)
         .then(response => {
             if (response.ok) return response;

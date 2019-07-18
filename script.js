@@ -57,6 +57,7 @@ moreLangs.forEach(li => {
 
 lisTo.forEach(li => {
     li.addEventListener('click', () => {
+        lisTo.forEach(li => li.classList.remove('active'))
         li.classList.add('active')
     })
 });

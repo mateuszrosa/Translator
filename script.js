@@ -4,7 +4,9 @@ const lisFrom = document.querySelectorAll('.first .choose li.firstUl');
 const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('.btn');
 const langs = document.querySelector('.langs');
-const more = document.querySelectorAll('.more');
+const more1st = document.querySelector('.more');
+const more2nd = document.querySelector('.second .more');
+console.log(more1st, more2nd);
 const moreLangs = document.querySelectorAll('.more .langs ul li');
 let translation = '';
 let fromLang = 'pl';
@@ -19,11 +21,9 @@ input.addEventListener('click', () => {
 
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
-        more.forEach(more => {
-            more.addEventListener('click', moreFun);
-            more.classList.remove('active');
-        })
+        more.addEventListener('click', moreFun);
         langs.classList.remove('activeLangs');
+        more.classList.remove('active');
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
         fromLang = li.dataset.lang;
@@ -35,15 +35,10 @@ const moreFun = (e) => {
     lisFrom.forEach(li => li.classList.remove('active'));
     e.target.classList.add('active');
     langs.classList.add('activeLangs');
-    more.forEach(more => {
-        more.removeEventListener('click', moreFun, false);
-    })
+    more.removeEventListener('click', moreFun, false);
 }
 
-more.forEach(more => {
-    more.addEventListener('click', moreFun);
-})
-
+more.addEventListener('click', moreFun);
 
 
 moreLangs.forEach(li => {
@@ -67,8 +62,11 @@ lisTo.forEach(li => {
         lisTo.forEach(li => li.classList.remove('active'))
         li.classList.add('active');
         toLang = li.dataset.lang;
+        more1.classList.remove('activeLangs');
     })
 });
+
+more1.addEventListener('click', moreFun);
 
 btn.addEventListener('click', e => {
     e.preventDefault()

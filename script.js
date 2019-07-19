@@ -3,7 +3,8 @@ const input = document.querySelector('.input');
 const lisFrom = document.querySelectorAll('.first .choose li.firstUl');
 const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('.btn');
-const langs = document.querySelector('.langs');
+const langs1st = document.querySelector('.first .langs');
+const langs2nd = document.querySelector('.second .langs');
 const more1st = document.querySelector('.more');
 const more2nd = document.querySelector('.second .more');
 console.log(more1st, more2nd);
@@ -21,24 +22,24 @@ input.addEventListener('click', () => {
 
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
-        more.addEventListener('click', moreFun);
-        langs.classList.remove('activeLangs');
-        more.classList.remove('active');
+        more1st.addEventListener('click', moreFun);
+        langs1st.classList.remove('activeLangs');
+        more1st.classList.remove('active');
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
         fromLang = li.dataset.lang;
     })
 });
 
-const moreFun = (e) => {
-    console.log('click1');
-    lisFrom.forEach(li => li.classList.remove('active'));
+const moreFun = (e, more, lis, langs) => {
+    console.log('click');
+    lis.forEach(li => li.classList.remove('active'));
     e.target.classList.add('active');
     langs.classList.add('activeLangs');
     more.removeEventListener('click', moreFun, false);
 }
 
-more.addEventListener('click', moreFun);
+more1st.addEventListener('click', (e) => moreFun(e, more1st, lisFrom, langs1st));
 
 
 moreLangs.forEach(li => {
@@ -50,9 +51,9 @@ moreLangs.forEach(li => {
         lisFrom[1].textContent = li.textContent;
         lisFrom[1].dataset.lang = li.dataset.lang;
         lisFrom[1].classList.add('active');
-        more.classList.remove('active');
+        more1st.classList.remove('active');
         setTimeout(() => {
-            more.addEventListener('click', moreFun);
+            more1st.addEventListener('click', moreFun);
         }, 500)
     })
 })
@@ -62,11 +63,12 @@ lisTo.forEach(li => {
         lisTo.forEach(li => li.classList.remove('active'))
         li.classList.add('active');
         toLang = li.dataset.lang;
-        more1.classList.remove('activeLangs');
+        console.log(more2nd);
+        langs2nd.classList.remove('activeLangs');
     })
 });
 
-more1.addEventListener('click', moreFun);
+more2nd.addEventListener('click', (e) => moreFun(e, more2nd, lisTo, langs2nd));
 
 btn.addEventListener('click', e => {
     e.preventDefault()

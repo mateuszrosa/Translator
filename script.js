@@ -62,11 +62,11 @@ lisTo.forEach(li => {
         li.classList.add('active');
         toLang = li.dataset.lang;
         console.log(more2nd);
-        langs2nd.classList.remove('activeLangs');
+        langs.classList.remove('activeLangs');
     })
 });
 
-more2nd.addEventListener('click', (e) => moreFun(e, more2nd, lisTo, langs2nd));
+more2nd.addEventListener('click', (e) => moreFun(e, more2nd, lisTo, langs));
 
 btn.addEventListener('click', e => {
     e.preventDefault()

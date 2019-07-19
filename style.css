@@ -65,7 +65,7 @@ div.container .translator {
     line-height: 40px;
 }
 
-.more .langs {
+.container .langs {
     border: 1px solid black;
     position: absolute;
     background-color: #fff;
@@ -80,7 +80,7 @@ div.container .translator {
     list-style: none;
 }
 
-.more .activeLangs {
+.container .activeLangs {
     display: block;
 }
 

@@ -3,11 +3,9 @@ const input = document.querySelector('.input');
 const lisFrom = document.querySelectorAll('.first .choose li.firstUl');
 const lisTo = document.querySelectorAll('.second .choose li');
 const btn = document.querySelector('.btn');
-const langs1st = document.querySelector('.first .langs');
-const langs2nd = document.querySelector('.second .langs');
+const langs = document.querySelector('.langs');
 const more1st = document.querySelector('.more');
 const more2nd = document.querySelector('.second .more');
-console.log(more1st, more2nd);
 const moreLangs = document.querySelectorAll('.more .langs ul li');
 let translation = '';
 let fromLang = 'pl';
@@ -39,7 +37,7 @@ const moreFun = (e, more, lis, langs) => {
     more.removeEventListener('click', moreFun, false);
 }
 
-more1st.addEventListener('click', (e) => moreFun(e, more1st, lisFrom, langs1st));
+more1st.addEventListener('click', (e) => moreFun(e, more1st, lisFrom, langs));
 
 
 moreLangs.forEach(li => {

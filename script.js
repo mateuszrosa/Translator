@@ -20,8 +20,10 @@ input.addEventListener('click', () => {
 
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
+        if (more1st.classList.contains('active')) {
+            langs.classList.remove('activeLangs');
+        }
         more1st.addEventListener('click', moreFun);
-        langs.classList.remove('activeLangs');
         more1st.classList.remove('active');
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
@@ -58,11 +60,12 @@ moreLangs.forEach(li => {
 
 lisTo.forEach(li => {
     li.addEventListener('click', () => {
+        if (more2nd.classList.contains('active')) {
+            langs.classList.remove('activeLangs');
+        }
         lisTo.forEach(li => li.classList.remove('active'))
         li.classList.add('active');
         toLang = li.dataset.lang;
-        console.log(more2nd);
-        langs.classList.remove('activeLangs');
     })
 });
 

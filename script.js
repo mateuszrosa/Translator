@@ -21,7 +21,7 @@ input.addEventListener('click', () => {
 lisFrom.forEach(li => {
     li.addEventListener('click', () => {
         more1st.addEventListener('click', moreFun);
-        langs1st.classList.remove('activeLangs');
+        langs.classList.remove('activeLangs');
         more1st.classList.remove('active');
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');

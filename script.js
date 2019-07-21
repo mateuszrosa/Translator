@@ -43,13 +43,19 @@ more1st.addEventListener('click', (e) => moreFun(e, more1st, lisFrom, langs));
 
 moreLangs.forEach(li => {
     li.addEventListener('click', () => {
+        if (more1st.classList.contains('active')) {
+            lisFrom[1].textContent = li.textContent;
+            lisFrom[1].dataset.lang = li.dataset.lang;
+            lisFrom[1].classList.add('active');
+        } else if (more2nd.classList.contains('active')) {
+            lisTo[0].textContent = li.textContent;
+            lisTo[0].dataset.lang = li.dataset.lang;
+            lisTo[0].classList.add('active');
+        }
         moreLangs.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
         fromLang = li.dataset.lang;
         langs.classList.remove('activeLangs');
-        lisFrom[1].textContent = li.textContent;
-        lisFrom[1].dataset.lang = li.dataset.lang;
-        lisFrom[1].classList.add('active');
         more1st.classList.remove('active');
         setTimeout(() => {
             more1st.addEventListener('click', moreFun);

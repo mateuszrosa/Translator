@@ -77,6 +77,8 @@ div.container .translator {
 
 .langs ul {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     list-style: none;
 }

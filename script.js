@@ -12,6 +12,7 @@ let fromLang = 'pl';
 let toLang = 'en';
 let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
+const moreUl = document.querySelector('.container .langs ul');
 
 input.addEventListener('click', () => {
     input.value = '';
@@ -99,6 +100,27 @@ input.addEventListener('keydown', e => {
         }
     }
 })
+
+fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
+    .then(response => {
+        if (response.ok) return response
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        fillMore(data.langs)
+
+    })
+
+const fillMore = (data) => {
+    for (let [key, value] of Object.entries(data)) {
+        console.log(key, value);
+        newLi = document.createElement('li');
+        newLi.textContent = value + ", ";
+        moreUl.appendChild(newLi);
+    }
+}
 
 const translate = (text) => {
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromLang}-${toLang}&[format=plain]`)

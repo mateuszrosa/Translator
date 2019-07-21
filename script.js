@@ -6,7 +6,7 @@ const btn = document.querySelector('.btn');
 const langs = document.querySelector('.langs');
 const more1st = document.querySelector('.more');
 const more2nd = document.querySelector('.second .more');
-const moreLangs = document.querySelectorAll('.more .langs ul li');
+const moreLangs = document.querySelectorAll('.container .langs ul li');
 let translation = '';
 let fromLang = 'pl';
 let toLang = 'en';
@@ -32,7 +32,6 @@ lisFrom.forEach(li => {
 });
 
 const moreFun = (e, more, lis, langs) => {
-    console.log('click');
     lis.forEach(li => li.classList.remove('active'));
     e.target.classList.add('active');
     langs.classList.add('activeLangs');
@@ -78,7 +77,6 @@ btn.addEventListener('click', e => {
             detect(input.value);
         } else {
             translate(input.value);
-            console.log(fromLang);
         }
     }
 })

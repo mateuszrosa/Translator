@@ -117,8 +117,13 @@ const fillMore = (data) => {
     for (let [key, value] of Object.entries(data)) {
         newLi = document.createElement('li');
         newLi.textContent = value;
-        newLi.dataset.lang = key;
+        newLi.dataset.lang = key
         moreUl.appendChild(newLi);
+        li = moreUl.querySelectorAll('li');
+        newLi.addEventListener('click', e => {
+            li.forEach(li => li.classList.remove('active'));
+            fromLang = e.target.dataset.lang;
+        })
     }
 }
 

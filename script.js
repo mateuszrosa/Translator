@@ -115,9 +115,9 @@ fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
 
 const fillMore = (data) => {
     for (let [key, value] of Object.entries(data)) {
-        console.log(key, value);
         newLi = document.createElement('li');
-        newLi.textContent = value + ", ";
+        newLi.textContent = value;
+        newLi.dataset.lang = key;
         moreUl.appendChild(newLi);
     }
 }

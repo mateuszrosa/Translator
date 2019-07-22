@@ -165,5 +165,6 @@ const getLang = (lang) => {
             lisFrom[1].textContent = data.langs[lang];
             lisFrom[1].dataset.lang = lang;
             lisFrom[1].classList.add('active');
+            fromLang = lang;
         })
 }

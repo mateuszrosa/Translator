@@ -160,6 +160,10 @@ const getLang = (lang) => {
             return response.json();
         })
         .then(data => {
-            console.log(data.langs[lang]);
+            li = document.querySelectorAll('li.firstUl');
+            li.forEach(li => li.classList.remove('active'));
+            lisFrom[1].textContent = data.langs[lang];
+            lisFrom[1].dataset.lang = lang;
+            lisFrom[1].classList.add('active');
         })
 }

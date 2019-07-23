@@ -29,7 +29,6 @@ lisFrom.forEach(li => {
         lisFrom.forEach(li => li.classList.remove('active'));
         li.classList.add('active');
         fromLang = li.dataset.lang;
-        console.log(fromLang);
     })
 });
 
@@ -87,8 +86,7 @@ fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
         return response.json();
     })
     .then(data => {
-        fillMore(data.langs)
-
+        fillMore(data.langs);
     })
 
 const fillMore = (data) => {

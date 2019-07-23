@@ -124,7 +124,6 @@ const fillMore = (data) => {
 }
 
 const translate = (text) => {
-    console.log(fromLang, toLang);
     fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${key}&text=${text}&lang=${fromLang}-${toLang}&[format=plain]`)
         .then(response => {
             if (response.ok) return response;

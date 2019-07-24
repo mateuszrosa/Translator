@@ -102,6 +102,20 @@ const fillMore = (data) => {
         newLi.addEventListener('click', e => {
             newLis.forEach(newLi => newLi.classList.remove('active'));
             newLi.classList.add('active');
+            if (more1st.classList.contains('active')) {
+                lisFrom[1].textContent = e.target.textContent;
+                lisFrom[1].dataset.lang = e.target.dataset.lang;
+                lisFrom[1].classList.add('active');
+                more1st.classList.remove('active');
+                fromLang = e.target.dataset.lang;
+            } else if (more2nd.classList.contains('active')) {
+                lisTo[0].textContent = e.target.textContent;
+                lisTo[0].dataset.lang = e.target.dataset.lang;
+                lisTo[0].classList.add('active');
+                more2nd.classList.remove('active');
+                toLang = e.target.dataset.lang;
+            }
+            langs.classList.remove('activeLangs');
         })
     })
 }

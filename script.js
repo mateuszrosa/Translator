@@ -90,36 +90,20 @@ fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
     })
 
 const fillMore = (data) => {
-    console.log(Object.keys(data).length);
+    let objectLength = Object.keys(data).length;
     for (let [key, value] of Object.entries(data)) {
         newLi = document.createElement('li');
         newLi.textContent = value;
         newLi.dataset.lang = key
         moreUl.appendChild(newLi);
-        li = moreUl.querySelectorAll('li');
-        newLi.addEventListener('mouseover', e => {
-            li.forEach(li => li.classList.remove('active'));
-            e.target.classList.toggle('active');
-        })
-        newLi.addEventListener('click', e => {
-            li.forEach(li => li.classList.remove('active'));
-            e.target.classList.add('active');
-            if (more1st.classList.contains('active')) {
-                lisFrom[1].textContent = e.target.textContent;
-                lisFrom[1].dataset.lang = e.target.dataset.lang;
-                lisFrom[1].classList.add('active');
-                more1st.classList.remove('active');
-                fromLang = e.target.dataset.lang;
-            } else if (more2nd.classList.contains('active')) {
-                lisTo[0].textContent = e.target.textContent;
-                lisTo[0].dataset.lang = e.target.dataset.lang;
-                lisTo[0].classList.add('active');
-                more2nd.classList.remove('active');
-                toLang = e.target.dataset.lang;
-            }
-            langs.classList.remove('activeLangs');
-        })
     }
+    let newLis = document.querySelectorAll('.langs ul li');
+    newLis.forEach(newLi => {
+        newLi.addEventListener('click', e => {
+            newLis.forEach(newLi => newLi.classList.remove('active'));
+            newLi.classList.add('active');
+        })
+    })
 }
 
 const translate = (text) => {

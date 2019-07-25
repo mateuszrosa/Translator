@@ -65,6 +65,10 @@ div.container .translator {
     line-height: 40px;
 }
 
+.choose li.more {
+    line-height: 40px;
+}
+
 .choose li.more i {
     font-size: 40px;
 }

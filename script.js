@@ -13,7 +13,6 @@ let toLang = 'en';
 let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
 const moreUl = document.querySelector('.container .langs ul');
-console.log(lisFrom, lisTo);
 
 input.addEventListener('click', () => {
     input.value = '';
@@ -35,7 +34,7 @@ lisFrom.forEach(li => {
 
 const moreFun = (e, more, lis, langs) => {
     lis.forEach(li => li.classList.remove('active'));
-    e.target.classList.add('active');
+    e.target.parentNode.classList.add('active');
     langs.classList.add('activeLangs');
     more.removeEventListener('click', moreFun, false);
 }
@@ -103,14 +102,12 @@ const fillMore = (data) => {
             newLis.forEach(newLi => newLi.classList.remove('active'));
             newLi.classList.add('active');
             if (more1st.classList.contains('active')) {
-                console.log('more1');
                 lisFrom[1].textContent = e.target.textContent;
                 lisFrom[1].dataset.lang = e.target.dataset.lang;
                 lisFrom[1].classList.add('active');
                 more1st.classList.remove('active');
                 fromLang = e.target.dataset.lang;
             } else if (more2nd.classList.contains('active')) {
-                console.log('more2nd');
                 lisTo[0].textContent = e.target.textContent;
                 lisTo[0].dataset.lang = e.target.dataset.lang;
                 lisTo[0].classList.add('active');

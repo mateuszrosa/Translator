@@ -92,11 +92,19 @@ fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
     })
 
 const fillMore = (data) => {
+    let counter = 0;
     for (let [key, value] of Object.entries(data)) {
+        counter++;
         newLi = document.createElement('li');
         newLi.textContent = value;
-        newLi.dataset.lang = key
-        moreUl.appendChild(newLi);
+        newLi.dataset.lang = key;
+        if (counter <= 30) {
+            moreUl1.appendChild(newLi);
+        } else if (counter > 30 && counter <= 60) {
+            moreUl2.appendChild(newLi);
+        } else {
+            moreUl3.appendChild(newLi);
+        }
     }
     let newLis = document.querySelectorAll('.langs ul li');
     newLis.forEach(newLi => {

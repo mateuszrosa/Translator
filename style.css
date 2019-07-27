@@ -87,6 +87,7 @@ div.container .translator {
 
 .langs ul {
     width: 33%;
+    list-style: none;
 }
 
 .langs ul li {

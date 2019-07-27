@@ -86,10 +86,7 @@ div.container .translator {
 }
 
 .langs ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    list-style: none;
+    width: 33%;
 }
 
 .langs ul li {
@@ -97,7 +94,7 @@ div.container .translator {
 }
 
 .container .activeLangs {
-    display: block;
+    display: flex;
 }
 
 .active {

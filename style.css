@@ -96,6 +96,7 @@ div.container .translator {
 
 .container .activeLangs {
     display: flex;
+    flex-direction: row;
 }
 
 .active {

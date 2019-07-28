@@ -99,11 +99,11 @@ const fillMore = (data) => {
         newLi = document.createElement('li');
         newLi.textContent = value;
         newLi.dataset.lang = key;
-        if (counter <= 25) {
+        if (counter <= 23) {
             moreUl1.appendChild(newLi);
-        } else if (counter > 25 && counter <= 50) {
+        } else if (counter > 23 && counter <= 46) {
             moreUl2.appendChild(newLi);
-        } else if (counter > 50 && counter <= 75) {
+        } else if (counter > 46 && counter <= 69) {
             moreUl3.appendChild(newLi);
         } else {
             moreUl4.appendChild(newLi);

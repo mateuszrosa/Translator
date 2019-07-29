@@ -90,12 +90,17 @@ div.container .translator {
     list-style: none;
     border-left: 1px solid black;
 }
+
 .langs ul:first-child {
     border-left: none;
 }
 
+.langs ul:first-child li {
+    padding: 5px 0;
+}
+
 .langs ul li {
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 .container .activeLangs {

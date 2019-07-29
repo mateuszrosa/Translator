@@ -90,6 +90,9 @@ div.container .translator {
     list-style: none;
     border-left: 1px solid black;
 }
+.langs ul:first-child {
+    border-left: none;
+}
 
 .langs ul li {
     padding: 5px;

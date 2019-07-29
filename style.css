@@ -103,6 +103,11 @@ div.container .translator {
     padding: 5px 10px;
 }
 
+.langs ul li:hover {
+    background-color: #000;
+    color: #fff;
+}
+
 .container .activeLangs {
     display: flex;
     flex-direction: row;

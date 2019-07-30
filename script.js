@@ -16,6 +16,7 @@ const moreUl1 = document.querySelector('.container .langs ul');
 const moreUl2 = document.querySelector('.container .langs ul:nth-child(2)');
 const moreUl3 = document.querySelector('.container .langs ul:nth-child(3)');
 const moreUl4 = document.querySelector('.container .langs ul:nth-child(4)');
+const quit = document.querySelector('.fa-times');
 
 input.addEventListener('click', () => {
     input.value = '';
@@ -177,3 +178,7 @@ const getLang = (lang) => {
             translate(input.value);
         })
 }
+
+quit.addEventListener('click', () => {
+    langs.classList.remove('activeLangs');
+})

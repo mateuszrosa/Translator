@@ -87,6 +87,13 @@ div.container .translator {
     transform: translate(-50%, -45%);
 }
 
+.langs .fa-times {
+    font-size: 30px;
+    position: absolute;
+    right: 6px;
+    top: 3px;
+}
+
 .langs ul {
     width: 33%;
     list-style: none;

@@ -95,7 +95,7 @@ div.container .translator {
 }
 
 .langs ul {
-    width: 33%;
+    width: 25%;
     list-style: none;
     border-left: 1px solid black;
 }
@@ -109,6 +109,7 @@ div.container .translator {
 }
 
 .langs ul li {
+    width: 145px;
     padding: 5px 10px;
 }
 

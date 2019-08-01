@@ -186,6 +186,8 @@ quit.addEventListener('click', () => {
         lisFrom[1].classList.add('active');
         fromLang = lisFrom[1].dataset.lang;
     } else {
-        console.log('more2');
+        more2nd.classList.remove('active');
+        lisTo[1].classList.add('active');
+        toLang = lisTo[1].dataset.lang;
     }
 })

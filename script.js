@@ -182,11 +182,9 @@ const getLang = (lang) => {
 quit.addEventListener('click', () => {
     langs.classList.remove('activeLangs');
     if (more1st.classList.contains('active')) {
-        console.log('more1');
         more1st.classList.remove('active')
         lisFrom[1].classList.add('active');
         fromLang = lisFrom[1].dataset.lang;
-        console.log(fromLang);
     } else {
         console.log('more2');
     }

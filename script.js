@@ -94,9 +94,20 @@ fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
     })
 
 const fillMore = (data) => {
+    // const ordered = {};
+    // Object.keys(data).sort().forEach(function (key, value) {
+    //     console.log(key);
+    //     console.log(data[key]);
+    //     ordered[key] = data[key]
+    //     ordered[value] = key;
+    // });
+    // console.log(ordered);
     let counter = 0;
+    let obj = {};
     for (let [key, value] of Object.entries(data)) {
         counter++;
+        obj[key] = value;
+        obj[value] = key;
         newLi = document.createElement('li');
         newLi.textContent = value;
         newLi.dataset.lang = key;

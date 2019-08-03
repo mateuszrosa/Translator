@@ -94,23 +94,20 @@ fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
     })
 
 const fillMore = (data) => {
-    // const ordered = {};
-    // Object.keys(data).sort().forEach(function (key, value) {
-    //     console.log(key);
-    //     console.log(data[key]);
-    //     ordered[key] = data[key]
-    //     ordered[value] = key;
-    // });
-    // console.log(ordered);
+    const ordered = {};
     let counter = 0;
     let obj = {};
     for (let [key, value] of Object.entries(data)) {
-        counter++;
-        obj[key] = value;
         obj[value] = key;
+    }
+    Object.keys(obj).sort().forEach(function (key) {
+        ordered[key] = obj[key];
+    });
+    for (let [key, value] of Object.entries(ordered)) {
+        counter++;
         newLi = document.createElement('li');
-        newLi.textContent = value;
-        newLi.dataset.lang = key;
+        newLi.textContent = key;
+        newLi.dataset.lang = value;
         if (counter <= 23) {
             moreUl1.appendChild(newLi);
         } else if (counter > 23 && counter <= 46) {

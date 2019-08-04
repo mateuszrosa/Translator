@@ -100,9 +100,9 @@ const fillMore = (data) => {
     for (let [key, value] of Object.entries(data)) {
         obj[value] = key;
     }
-    Object.keys(obj).sort().forEach(function (key) {
+    Object.keys(obj).sort().forEach((key => {
         ordered[key] = obj[key];
-    });
+    }));
     for (let [key, value] of Object.entries(ordered)) {
         counter++;
         newLi = document.createElement('li');

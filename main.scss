@@ -81,9 +81,9 @@ div.container {
         // display: flex;
         position: absolute;
         display: none;
-        top: -60px;
+        top: -40px;
         left: 0;
-        height: 100%;
+        height: 90%;
         background-color: #fff;
 
         ul {
@@ -93,9 +93,10 @@ div.container {
 
             li {
                 width: 100px;
-                padding: 5px 10px;
+                padding: 5px 3px;
+                font-size: 18px;
 
-                %:hover {
+                &:hover {
                     background-color: #000;
                     color: #fff;
                 }

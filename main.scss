@@ -90,6 +90,11 @@ div.container {
             width: 25%;
             list-style: none;
             border-left: 1px solid black;
+            word-wrap: break-word;
+
+            &:first-child {
+                border-left: none;
+            }
 
             li {
                 width: 100px;
@@ -141,10 +146,6 @@ div.first .input {
     position: absolute;
     right: 5px;
     top: 3px;
-}
-
-.langs ul:first-child {
-    border-left: none;
 }
 
 .langs ul:first-child li {

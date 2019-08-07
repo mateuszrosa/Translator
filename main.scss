@@ -15,10 +15,9 @@ h1 {
     }
 }
 
-
 div.container {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
 
     @media (min-width: 1024px) {
         width: 80%;
@@ -29,27 +28,39 @@ div.container {
     }
 
     div {
-        width: 100%;
+        width: 50%;
         border: 3px solid black;
         font-size: 20px;
         padding: 3px 3px;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
+
+        .choose {
+            width: 100%;
+            border: none;
+            border-bottom: 3px solid #000;
+            color: #000;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 3px;
+            list-style: none;
+            height: 40px;
+        }
+
+        .translator {
+            display: block;
+            width: 100%;
+            flex-grow: 1;
+            border: none;
+            font-size: 18px;
+            resize: none;
+            padding: 3px 3px;
+            height: 300px;
+        }
     }
 
-    div.choose {
-        width: 100%;
-        border: none;
-        border-bottom: 3px solid #000;
-        color: #000;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        padding: 3px 3px;
-        list-style: none;
-        height: 40px;
-    }
 }
 
 div.first form .input {

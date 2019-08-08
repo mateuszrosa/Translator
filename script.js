@@ -12,11 +12,12 @@ let fromLang = 'pl';
 let toLang = 'en';
 let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
-const moreUl1 = document.querySelector('.container .langs ul');
+// const moreUl1 = document.querySelector('.container .langs ul');
 const moreUl2 = document.querySelector('.container .langs ul:nth-child(2)');
 const moreUl3 = document.querySelector('.container .langs ul:nth-child(3)');
 const moreUl4 = document.querySelector('.container .langs ul:nth-child(4)');
 const quit = document.querySelector('.fa-times');
+
 
 input.addEventListener('click', () => {
     input.value = '';
@@ -97,6 +98,8 @@ const fillMore = (data) => {
     const ordered = {};
     const obj = {};
     let counter = 0;
+    moreUl1 = document.createElement('ul');
+    langs.appendChild(moreUl1);
     for (let [key, value] of Object.entries(data)) {
         obj[value] = key;
     }

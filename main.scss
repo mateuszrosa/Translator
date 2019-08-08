@@ -93,7 +93,7 @@ div.container {
         display: none;
         top: -40px;
         left: 0;
-        height: 91%;
+        height: 93%;
         background-color: #fff;
 
         ul {
@@ -107,9 +107,12 @@ div.container {
             }
 
             li {
-                width: 100px;
-                padding: 5px 3px;
-                font-size: 18px;
+                width: 75px;
+                // padding: 5px 3px;
+                padding-top: 3px;
+                padding-left: 5px;
+                padding-right: 3px;
+                font-size: 14px;
 
                 &:hover {
                     background-color: #000;

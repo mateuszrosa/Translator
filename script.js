@@ -12,11 +12,8 @@ let fromLang = 'pl';
 let toLang = 'en';
 let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
-// const moreUl1 = document.querySelector('.container .langs ul');
-// const moreUl2 = document.querySelector('.container .langs ul:nth-child(2)');
-// const moreUl3 = document.querySelector('.container .langs ul:nth-child(3)');
-// const moreUl4 = document.querySelector('.container .langs ul:nth-child(4)');
 const quit = document.querySelector('.fa-times');
+
 
 
 input.addEventListener('click', () => {
@@ -105,7 +102,6 @@ const fillMore = (data) => {
     langs.appendChild(moreUl1);
     langs.appendChild(moreUl2);
     langs.appendChild(moreUl3);
-    langs.appendChild(moreUl4);
     for (let [key, value] of Object.entries(data)) {
         obj[value] = key;
     }
@@ -117,14 +113,12 @@ const fillMore = (data) => {
         newLi = document.createElement('li');
         newLi.textContent = key;
         newLi.dataset.lang = value;
-        if (counter <= 23) {
+        if (counter <= 31) {
             moreUl1.appendChild(newLi);
-        } else if (counter > 23 && counter <= 46) {
+        } else if (counter > 31 && counter <= 62) {
             moreUl2.appendChild(newLi);
-        } else if (counter > 46 && counter <= 69) {
-            moreUl3.appendChild(newLi);
         } else {
-            moreUl4.appendChild(newLi);
+            moreUl3.appendChild(newLi);
         }
     }
     let newLis = document.querySelectorAll('.langs ul li');

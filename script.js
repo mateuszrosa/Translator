@@ -96,6 +96,7 @@ const fillMore = (data) => {
     const obj = {};
     let counter = 0;
     moreUl1 = document.createElement('ul');
+    moreUl1.style.borderLeft = "none";
     moreUl2 = document.createElement('ul');
     moreUl3 = document.createElement('ul');
     moreUl4 = document.createElement('ul');

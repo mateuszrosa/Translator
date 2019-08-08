@@ -102,10 +102,6 @@ div.container {
             border-left: 1px solid black;
             word-wrap: break-word;
 
-            &:first-child {
-                border-left: none;
-            }
-
             li {
                 width: 105px;
                 // padding: 5px 3px;

@@ -54,6 +54,12 @@ div.container {
             padding: 3px 3px;
             list-style: none;
             height: 40px;
+
+            li {
+                font-weight: normal;
+                font-size: 23px;
+                line-height: 40px;
+            }
         }
 
         .translator {
@@ -83,7 +89,7 @@ div.container {
         display: none;
         top: -40px;
         left: 0;
-        height: 90%;
+        height: 91%;
         background-color: #fff;
 
         ul {
@@ -123,13 +129,6 @@ div.first form .input {
 div.first .input {
     border: none;
     font-size: 18px;
-}
-
-
-.choose li {
-    font-weight: normal;
-    font-size: 23px;
-    line-height: 40px;
 }
 
 .choose li.more {

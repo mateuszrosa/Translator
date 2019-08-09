@@ -93,6 +93,10 @@ div.container {
             border-left: 1px solid black;
             word-wrap: break-word;
 
+            &:first-of-type {
+                border-left: none;
+            }
+
             li {
                 width: 100px;
                 // padding: 5px 3px;

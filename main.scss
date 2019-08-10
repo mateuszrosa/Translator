@@ -96,19 +96,13 @@ div.container {
             &:first-of-type {
                 border-left: none;
                 width: 30%;
-                li {
-                    width: 90px;
-                }
             }
             &:nth-of-type(2) {
                 width:36%;
-                li {
-                    width: 110px;
-                }
             }
 
             li {
-                width: 100px;
+                width: 100%;
                 // padding: 5px 3px;
                 padding-top: 3px;
                 padding-left: 5px;

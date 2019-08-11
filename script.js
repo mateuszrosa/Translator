@@ -13,8 +13,7 @@ let toLang = 'en';
 let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
 const quit = document.querySelector('.fa-times');
-
-
+const tablet = window.matchMedia("(min-width:768px)");
 
 input.addEventListener('click', () => {
     input.value = '';
@@ -99,6 +98,13 @@ const fillMore = (data) => {
     moreUl2 = document.createElement('ul');
     moreUl3 = document.createElement('ul');
     moreUl4 = document.createElement('ul');
+    window.addEventListener('resize', () => {
+        if(tablet.matches) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
+    })
     langs.appendChild(moreUl1);
     langs.appendChild(moreUl2);
     langs.appendChild(moreUl3);

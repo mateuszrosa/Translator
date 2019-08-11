@@ -98,35 +98,36 @@ const fillMore = (data) => {
     moreUl2 = document.createElement('ul');
     moreUl3 = document.createElement('ul');
     moreUl4 = document.createElement('ul');
-    window.addEventListener('resize', () => {
-        if(tablet.matches) {
-            console.log(true);
-        } else {
-            console.log(false);
-        }
-    })
-    langs.appendChild(moreUl1);
-    langs.appendChild(moreUl2);
-    langs.appendChild(moreUl3);
     for (let [key, value] of Object.entries(data)) {
         obj[value] = key;
     }
     Object.keys(obj).sort().forEach((key => {
         ordered[key] = obj[key];
     }));
-    for (let [key, value] of Object.entries(ordered)) {
-        counter++;
-        newLi = document.createElement('li');
-        newLi.textContent = key;
-        newLi.dataset.lang = value;
-        if (counter <= 31) {
-            moreUl1.appendChild(newLi);
-        } else if (counter > 31 && counter <= 62) {
-            moreUl2.appendChild(newLi);
+    window.addEventListener('resize', () => {
+        if(tablet.matches) {
+            console.log(true);
         } else {
-            moreUl3.appendChild(newLi);
+            langs.appendChild(moreUl1);
+            langs.appendChild(moreUl2);
+            langs.appendChild(moreUl3);
+            for (let [key, value] of Object.entries(ordered)) {
+                counter++;
+                newLi = document.createElement('li');
+                newLi.textContent = key;
+                newLi.dataset.lang = value;
+                if (counter <= 31) {
+                    moreUl1.appendChild(newLi);
+                } 
+                else if (counter > 31 && counter <= 62) {
+                moreUl2.appendChild(newLi);
+                } 
+                else {
+                moreUl3.appendChild(newLi);
+                }
+            }
         }
-    }
+    })
     let newLis = document.querySelectorAll('.langs ul li');
     newLis.forEach(newLi => {
         newLi.addEventListener('click', e => {

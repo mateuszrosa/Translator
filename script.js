@@ -105,8 +105,26 @@ const fillMore = (data) => {
         ordered[key] = obj[key];
     }));
     window.addEventListener('resize', () => {
-        if(tablet.matches) {
-            console.log(true);
+        if (tablet.matches) {
+            langs.appendChild(moreUl1);
+            langs.appendChild(moreUl2);
+            langs.appendChild(moreUl3);
+            langs.appendChild(moreUl4);
+            for (let [key, value] of Object.entries(ordered)) {
+                counter++;
+                newLi = document.createElement('li');
+                newLi.textContent = key;
+                newLi.dataset.lang = value;
+                if (counter <= 23) {
+                    moreUl1.appendChild(newLi);
+                } else if (counter > 23 && counter <= 46) {
+                    moreUl2.appendChild(newLi);
+                } else if (counter > 46 && counter <= 69) {
+                    moreUl3.appendChild(newLi);
+                } else {
+                    moreUl4.appendChild(newLi)
+                }
+            }
         } else {
             langs.appendChild(moreUl1);
             langs.appendChild(moreUl2);
@@ -118,12 +136,10 @@ const fillMore = (data) => {
                 newLi.dataset.lang = value;
                 if (counter <= 31) {
                     moreUl1.appendChild(newLi);
-                } 
-                else if (counter > 31 && counter <= 62) {
-                moreUl2.appendChild(newLi);
-                } 
-                else {
-                moreUl3.appendChild(newLi);
+                } else if (counter > 31 && counter <= 62) {
+                    moreUl2.appendChild(newLi);
+                } else {
+                    moreUl3.appendChild(newLi);
                 }
             }
         }

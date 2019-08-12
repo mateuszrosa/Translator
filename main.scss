@@ -101,8 +101,9 @@ div.container {
                 border-left: none;
                 width: 30%;
             }
+
             &:nth-of-type(2) {
-                width:36%;
+                width: 36%;
             }
 
             li {
@@ -115,6 +116,10 @@ div.container {
 
                 @media (min-width: 425px) {
                     font-size: 17px;
+                }
+
+                @media (min-width: 768px) {
+                    font-size: 20px;
                 }
 
                 &:hover {

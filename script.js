@@ -113,6 +113,10 @@ const fillMore = data => {
   if (!tablet.matches) {
     console.log("mały");
     langs.textContent = "";
+    icon = document.createElement("i");
+    icon.classList.add("fas");
+    icon.classList.add("fa-times");
+    langs.appendChild(icon);
     moreUl1.textContent = "";
     moreUl2.textContent = "";
     moreUl3.textContent = "";
@@ -137,6 +141,10 @@ const fillMore = data => {
   } else {
     console.log("duzy");
     langs.textContent = "";
+    icon = document.createElement("i");
+    icon.classList.add("fas");
+    icon.classList.add("fa-times");
+    langs.appendChild(icon);
     moreUl1.textContent = "";
     moreUl2.textContent = "";
     moreUl3.textContent = "";

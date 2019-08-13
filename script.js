@@ -88,6 +88,10 @@ fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
   })
   .then(data => {
     fillMore(data.langs);
+    window.addEventListener("resize", () => {
+      console.log("end");
+      fillMore(data.langs);
+    });
   });
 
 const fillMore = data => {
@@ -107,6 +111,13 @@ const fillMore = data => {
       ordered[key] = obj[key];
     });
   if (!tablet.matches) {
+    console.log("mały");
+    langs.textContent = "";
+    moreUl1.textContent = "";
+    moreUl2.textContent = "";
+    moreUl3.textContent = "";
+    moreUl4.textContent = "";
+    counter = 0;
     langs.appendChild(moreUl1);
     langs.appendChild(moreUl2);
     langs.appendChild(moreUl3);
@@ -121,10 +132,11 @@ const fillMore = data => {
         moreUl2.appendChild(newLi);
       } else {
         moreUl3.appendChild(newLi);
-        console.log("end");
       }
     }
   } else {
+    console.log("duzy");
+    langs.textContent = "";
     moreUl1.textContent = "";
     moreUl2.textContent = "";
     moreUl3.textContent = "";

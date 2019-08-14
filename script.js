@@ -12,7 +12,6 @@ let fromLang = "pl";
 let toLang = "en";
 let lang;
 const key = `trnsl.1.1.20190707T201153Z.e127b502ca8c8497.8d4de021cacefbe69e6f3ecf754746c2f092c15d`;
-const quit = document.querySelector(".fa-times");
 const tablet = window.matchMedia("(min-width:768px)");
 
 input.addEventListener("click", () => {
@@ -89,7 +88,6 @@ fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?ui=en&key=${key}`)
   .then(data => {
     fillMore(data.langs);
     window.addEventListener("resize", () => {
-      console.log("end");
       fillMore(data.langs);
     });
   });
@@ -245,15 +243,17 @@ const getLang = lang => {
     });
 };
 
-quit.addEventListener("click", () => {
-  langs.classList.remove("activeLangs");
-  if (more1st.classList.contains("active")) {
-    more1st.classList.remove("active");
-    lisFrom[1].classList.add("active");
-    fromLang = lisFrom[1].dataset.lang;
-  } else {
-    more2nd.classList.remove("active");
-    lisTo[1].classList.add("active");
-    toLang = lisTo[1].dataset.lang;
-  }
-});
+const quitLangs = quit => {
+  quit.addEventListener("click", () => {
+    langs.classList.remove("activeLangs");
+    if (more1st.classList.contains("active")) {
+      more1st.classList.remove("active");
+      lisFrom[1].classList.add("active");
+      fromLang = lisFrom[1].dataset.lang;
+    } else {
+      more2nd.classList.remove("active");
+      lisTo[1].classList.add("active");
+      toLang = lisTo[1].dataset.lang;
+    }
+  });
+};

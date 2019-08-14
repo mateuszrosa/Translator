@@ -115,6 +115,7 @@ const fillMore = data => {
     icon.classList.add("fas");
     icon.classList.add("fa-times");
     langs.appendChild(icon);
+    quitLangs(icon);
     moreUl1.textContent = "";
     moreUl2.textContent = "";
     moreUl3.textContent = "";
@@ -143,6 +144,7 @@ const fillMore = data => {
     icon.classList.add("fas");
     icon.classList.add("fa-times");
     langs.appendChild(icon);
+    quitLangs(icon);
     moreUl1.textContent = "";
     moreUl2.textContent = "";
     moreUl3.textContent = "";

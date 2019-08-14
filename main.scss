@@ -157,8 +157,12 @@ div.first .input {
 .langs .fa-times {
     font-size: 30px;
     position: absolute;
-    right: 5px;
     top: 3px;
+    right: 0;
+
+    @media(min-width: 375px) {
+        right: 5px;
+    }
 }
 
 .choose li.active {

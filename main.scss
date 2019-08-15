@@ -44,6 +44,10 @@ div.container {
         flex-direction: column;
         margin-top: 60px;
 
+        @media (min-width: 1024px) {
+            width: 40%;
+        }
+
         .choose {
             width: 100%;
             border: none;

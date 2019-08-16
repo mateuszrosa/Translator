@@ -191,4 +191,8 @@ div.first .input {
     border-radius: 5px;
     margin-left: calc(100% - 145px);
     margin-top: 80px;
+
+    @media (min-width:1440px) {
+        margin-top: 120px;
+    }
 }

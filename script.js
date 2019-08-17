@@ -109,7 +109,6 @@ const fillMore = data => {
       ordered[key] = obj[key];
     });
   if (!tablet.matches) {
-    console.log("mały");
     langs.textContent = "";
     icon = document.createElement("i");
     icon.classList.add("fas");
@@ -138,7 +137,6 @@ const fillMore = data => {
       }
     }
   } else {
-    console.log("duzy");
     langs.textContent = "";
     icon = document.createElement("i");
     icon.classList.add("fas");

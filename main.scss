@@ -81,6 +81,13 @@ div.container {
             resize: none;
             padding: 3px 3px;
             height: 300px;
+            position: relative;
+
+            span {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
         }
     }
 

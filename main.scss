@@ -91,6 +91,10 @@ div.container {
                 a {
                     text-decoration: none;
                     color: #000;
+
+                    &:hover {
+                        color: blue;
+                    }
                 }
             }
         }

@@ -49,6 +49,19 @@ div.container {
             width: 49%;
         }
 
+        .btn {
+            width: 150px;
+            padding: 5px 10px;
+            font-size: 25px;
+            border-radius: 5px;
+            margin-left: calc(100% - 145px);
+            margin-top: 115px;
+
+            @media (min-width:1440px) {
+                margin-top: 120px;
+            }
+        }
+
         .choose {
             width: 100%;
             border: none;
@@ -203,17 +216,4 @@ div.first .input {
     color: #fff;
 
     font-weight: bold;
-}
-
-.btn {
-    width: 150px;
-    padding: 5px 10px;
-    font-size: 25px;
-    border-radius: 5px;
-    margin-left: calc(100% - 145px);
-    margin-top: 80px;
-
-    @media (min-width:1440px) {
-        margin-top: 120px;
-    }
 }

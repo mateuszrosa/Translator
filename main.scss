@@ -167,6 +167,10 @@ div.container {
                     font-size: 23px;
                 }
 
+                @media (min-width: 1440px) {
+                    font-size: 27px;
+                }
+
                 &:hover {
                     background-color: #000;
                     color: #fff;

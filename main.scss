@@ -137,6 +137,10 @@ div.container {
             transform: translate(-50%, -50%);
         }
 
+        @media (min-width: 1440px) {
+            transform: translate(-50%, -55%);
+        }
+
         ul {
             width: 33%;
             list-style: none;

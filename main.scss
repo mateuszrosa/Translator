@@ -51,16 +51,13 @@ div.container {
 
         .btn {
             width: 150px;
+            height: 45px;
             padding: 5px 10px;
             font-size: 25px;
             border-radius: 5px;
-            // margin-left: calc(100% - 145px);
-            // margin-top: 115px;
             position: absolute;
-
-            @media (min-width:1440px) {
-                margin-top: 165px;
-            }
+            right: 0;
+            top: calc(100% + 3px);
         }
 
         .choose {

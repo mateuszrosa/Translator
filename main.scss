@@ -41,6 +41,10 @@ div.container {
         flex-direction: column;
         margin-top: 60px;
 
+        &:first-of-type {
+            position: relative;
+        }
+
         @media (min-width: 1024px) {
             width: 49%;
         }

@@ -54,8 +54,9 @@ div.container {
             padding: 5px 10px;
             font-size: 25px;
             border-radius: 5px;
-            margin-left: calc(100% - 145px);
-            margin-top: 115px;
+            // margin-left: calc(100% - 145px);
+            // margin-top: 115px;
+            position: absolute;
 
             @media (min-width:1440px) {
                 margin-top: 165px;

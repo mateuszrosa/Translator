@@ -30,6 +30,10 @@ div.container {
         flex-direction: row;
     }
 
+    .second {
+        margin-top: 40px;
+    }
+
     div {
         width: 100%;
         height: 35vh;
@@ -120,9 +124,9 @@ div.container {
     .langs {
         position: absolute;
         display: none;
-        top: 0;
+        top: -35px;
         left: 0;
-        height: 78%;
+        height: 100%;
         background-color: #fff;
 
         @media (min-width:425px) {

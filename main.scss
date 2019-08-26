@@ -20,7 +20,7 @@ h1 {
 div.container {
     width: 100%;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 20px auto;
 
     @media (min-width: 1024px) {
         width: 80%;

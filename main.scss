@@ -143,7 +143,9 @@ div.container {
         }
 
         @media (min-width:768px) {
-            top: 8%;
+            top: 2%;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         @media (min-width:1024px) {

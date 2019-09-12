@@ -159,8 +159,12 @@ div.container {
 
         @media (min-width: 1440px) {
             width: 60%;
-            transform: translate(-50%, -55%);
             height: 88%;
+        }
+
+        @media (min-width: 2560px) {
+            width: 40%;
+            height: 79%;
         }
 
         ul {

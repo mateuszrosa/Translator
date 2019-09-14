@@ -94,7 +94,7 @@ div.container {
                     font-size: 23px;
                 }
 
-                @media (min-width: 1025px) {
+                @media (min-width: 1024px) {
                     font-size: 26px;
                 }
             }
@@ -120,6 +120,10 @@ div.container {
 
                 @media (min-width: 375px) {
                     font-size: 23px;
+                }
+
+                @media (min-width: 1024px) {
+                    font-size: 26px;
                 }
 
                 a {

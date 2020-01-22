@@ -16,7 +16,6 @@ h1 {
     }
 }
 
-
 div.container {
     width: 100%;
     flex-direction: column;
@@ -46,6 +45,7 @@ div.container {
 
         &:nth-of-type(2) {
             margin-top: 50px;
+            position: relative;
 
             @media (min-width: 1024px) {
                 margin-top: 60px;
@@ -100,6 +100,30 @@ div.container {
             }
         }
 
+        span {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 20px;
+
+            @media (min-width: 375px) {
+                font-size: 23px;
+            }
+
+            @media (min-width: 1024px) {
+                font-size: 26px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #000;
+
+                &:hover {
+                    color: blue;
+                }
+            }
+        }
+
         .translator {
             display: block;
             width: 100%;
@@ -111,30 +135,6 @@ div.container {
             height: 300px;
             position: relative;
             margin-top: 0;
-
-            span {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                font-size: 20px;
-
-                @media (min-width: 375px) {
-                    font-size: 23px;
-                }
-
-                @media (min-width: 1024px) {
-                    font-size: 26px;
-                }
-
-                a {
-                    text-decoration: none;
-                    color: #000;
-
-                    &:hover {
-                        color: blue;
-                    }
-                }
-            }
         }
     }
 

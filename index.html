@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Translator</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-    <script src="https://kit.fontawesome.com/2f690d6d3e.js"></script>
-  </head>
 
-  <body>
-    <h1>Translator</h1>
-    <div class="container">
-      <div class="first">
-        <ul class="choose">
-          <li data-lang="detect" class="firstUl">Detect</li>
-          <li class="active firstUl" data-lang="pl">Polish</li>
-          <li data-lang="en" class="firstUl">English</li>
-          <li data-lang="de" class="firstUl">German</li>
-          <li class="more firstUl"><i class="fas fa-angle-down"></i></li>
-        </ul>
-        <form>
-          <textarea
-            class="input translator"
-            placeholder="Type your text"
-          ></textarea>
-          <input class="btn" type="submit" value="Translate" />
-        </form>
-      </div>
-      <div class="second">
-        <ul class="choose">
-          <li data-lang="pl">Polish</li>
-          <li class="active" data-lang="en">English</li>
-          <li data-lang="de">German</li>
-          <li data-lang="ru">Russian</li>
-          <li class="more">
-            <i class="fas fa-angle-down"></i>
-          </li>
-        </ul>
-        <div class="translator">
-          <span>
-            Powered by
-            <a href="http://translate.yandex.com" target="_blank">Yandex</a>
-          </span>
-        </div>
-      </div>
-      <div class="langs"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Translator</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://kit.fontawesome.com/2f690d6d3e.js"></script>
+</head>
+
+<body>
+  <h1>Translator</h1>
+  <div class="container">
+    <div class="first">
+      <ul class="choose">
+        <li data-lang="detect" class="firstUl">Detect</li>
+        <li class="active firstUl" data-lang="pl">Polish</li>
+        <li data-lang="en" class="firstUl">English</li>
+        <li data-lang="de" class="firstUl">German</li>
+        <li class="more firstUl"><i class="fas fa-angle-down"></i></li>
+      </ul>
+      <form>
+        <textarea class="input translator" placeholder="Type your text"></textarea>
+        <input class="btn" type="submit" value="Translate" />
+      </form>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <div class="second">
+      <ul class="choose">
+        <li data-lang="pl">Polish</li>
+        <li class="active" data-lang="en">English</li>
+        <li data-lang="de">German</li>
+        <li data-lang="ru">Russian</li>
+        <li class="more">
+          <i class="fas fa-angle-down"></i>
+        </li>
+      </ul>
+      <div class="translator">
+      </div>
+      <span>
+        Powered by
+        <a href="http://translate.yandex.com" target="_blank">Yandex</a>
+      </span>
+    </div>
+    <div class="langs"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
